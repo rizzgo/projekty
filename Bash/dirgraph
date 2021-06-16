@@ -1,0 +1,167 @@
+#!/usr/bin/env bash
+
+# IOS Projekt 1 - dirgraph
+# Richard Seipel - xseipe00
+# 31.3.2020
+
+
+# settings
+POSIXLY_CORRECT=yes
+set -o pipefail
+
+
+# constants
+errout="Usage: dirgraph [-i FILE_ERE] [-n] [DIR]."
+namelen=12 # lenght of printed size label in histogram
+standardlen=80 # lenght of standard terminal
+histlen=8 # number of histogram lines
+
+
+# arguments
+norm="false"
+while getopts :i:n o
+do	case "$o" in
+	i)	FILE_ERE="$OPTARG";;
+	n)	norm="true";;
+	*)	echo $errout >&2
+		exit 1;;
+	esac
+done
+
+
+# checks if -i parameter is not path
+if [ $(echo "$FILE_ERE" | grep "/") ]; then
+	echo "Set correct parameter for \"-i\"!"  >&2
+	echo $errout  >&2
+	exit 1
+fi
+
+
+# checks number of arguments
+shift "$((OPTIND-1))"
+if [ $# -gt 1 ]; then
+	echo $errout >&2
+	exit 1
+fi
+
+
+# sets starting directory
+if [ $# -eq 1 ]; then
+	startdir=$1
+else
+	startdir=$(pwd)
+fi
+
+
+# checks if starting directory exists
+if [ ! -d "$startdir" ]; then
+	echo "Directory not found." >&2
+	exit 1
+fi
+
+
+# goes one dir above startdir and sets starting folder
+cd "$startdir"; cd ..
+startfolder=$(basename "$startdir")
+
+
+# checks if root directory won't be ignored
+if [ "$FILE_ERE" != "" ] && [ $(echo "$startfolder" | grep "$FILE_ERE") ]; then
+	echo "Root directory cannot be ignored!" >&2
+	exit 1
+fi
+echo "Root directory: $startdir"
+
+
+# sets -i parameter format
+if [ "$FILE_ERE" != "" ]; then
+	FILE_ERE=".*$FILE_ERE.*" # find -regex takes whole path from startfolder
+else 
+	FILE_ERE="             " # egrep -w matches whole name and no file is named "             "
+fi
+
+
+# counts directories
+dircount=$(find -H "$startfolder" -type d | egrep -vwc "$FILE_ERE")
+dcexitcode=$?
+echo "Directories: $dircount"
+
+
+# counts files
+filcount=$(find -H "$startfolder" -type f | egrep -vwc "$FILE_ERE")
+fcexitcode=$?
+echo "All files: $filcount"
+
+# arrays syntax 
+# =============
+# write to sizes[i]  -> eval ${sizes}${i}=something
+# read form sizes[i] -> variable=$(eval echo \$$sizes${i})
+# ================
+
+
+# sorts sizes
+sizes='sizes'
+eval ${sizes}0=$(find -H "$startfolder" -type f -size -100c | egrep -vwc "$FILE_ERE")
+eval ${sizes}1=$(find -H "$startfolder" -type f -size +100c -size -1024c | egrep -vwc "$FILE_ERE")
+eval ${sizes}2=$(find -H "$startfolder" -type f -size +1024c -size -10k | egrep -vwc "$FILE_ERE")
+eval ${sizes}3=$(find -H "$startfolder" -type f -size +10k -size -100k | egrep -vwc "$FILE_ERE")
+eval ${sizes}4=$(find -H "$startfolder" -type f -size +100k -size -1024k | egrep -vwc "$FILE_ERE")
+eval ${sizes}5=$(find -H "$startfolder" -type f -size +1024k -size -10M | egrep -vwc "$FILE_ERE")
+eval ${sizes}6=$(find -H "$startfolder" -type f -size +10M -size -100M | egrep -vwc "$FILE_ERE")
+eval ${sizes}7=$(find -H "$startfolder" -type f -size +100M -size -1024M | egrep -vwc "$FILE_ERE")
+eval ${sizes}8=$(find -H "$startfolder" -type f -size +1024M | egrep -vwc "$FILE_ERE")
+
+texts='texts'
+eval ${texts}0="'<100 B'"  ; eval ${texts}1="'<1 KiB'"; eval ${texts}2="'<10 KiB'"
+eval ${texts}3="'<100 KiB'"; eval ${texts}4="'<1 MiB'"; eval ${texts}5="'<10 MiB'"
+eval ${texts}6="'<100 MiB'"; eval ${texts}7="'<1 GiB'"; eval ${texts}8="'>=1 GiB'"
+
+
+# normalization
+if [ "$norm" = "true" ]; then
+	if [ -t 1 ]; then # if output is in terminal
+		linelen=$(( $(tput cols) - 1 - namelen ))
+	else
+		linelen=$(( standardlen - 1 - namelen ))
+	fi
+	
+	maximum=0 # longest line
+	for i in $(seq 0 $histlen); do
+		size=$(eval echo \$$sizes${i})
+		if [ $size -gt $maximum ]; then
+			maximum=$(eval echo \$$sizes${i})
+		fi
+	done
+
+	if [ $maximum -gt $linelen ]; then
+		ratio=$(( (( maximum + linelen - 1 )) / linelen )) # dividing with rounding up
+		for i in $(seq 0 $histlen); do
+			size=$(eval echo \$$sizes${i})
+			if [ $size -ne $maximum ]; then # for all except longest line
+				eval ${sizes}${i}=$(( (( $size + ratio - 1 )) / ratio ))
+			else # for longest line
+				eval ${sizes}${i}=$linelen
+			fi
+		done
+	fi
+fi
+
+
+# prints histogram 
+echo "File size histogram:"
+for i in $(seq 0 $histlen); do
+	printf "  %-8s: " "$(eval echo \$$texts${i})"
+	size=$(eval echo \$$sizes${i})
+	j=0
+	while [ $j -lt $size ]; do
+		echo -n "#"
+		j=$(( j + 1 ))
+	done
+	echo ""
+done
+
+
+# exit code from find (Permission denied)
+if [ $dcexitcode -ne 0 ] || [ $fcexitcode -ne 0 ]; then
+	exit 1
+fi 
