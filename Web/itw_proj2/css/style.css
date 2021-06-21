@@ -1,0 +1,310 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #09252c;
+    background-color: #F2F2F2;
+    letter-spacing: normal;
+}
+
+.content {
+    padding: 0 10%;
+    padding-bottom: 20px; 
+    max-width: 1000px;
+}
+
+.block {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-template-columns: 3fr 1fr;
+    margin-bottom: 30px;
+}
+
+#uvod h4 {
+    grid-column: 1;
+}
+
+#uvod img {
+    margin-top: 10px;
+    justify-self: center;
+    grid-row: 1 / 3;
+    grid-column: 2;
+}
+
+#vzdelanie #school h3 {
+    font-size: 55px;
+}
+
+#vzdelanie #school h4 {
+    grid-column: 1;
+}
+
+#vzdelanie #school p {
+    grid-column: 1 / 3;
+}
+
+#vzdelanie #school img {
+    grid-row: 1 / 3;
+    grid-column: 2;
+    margin-top: 10px;
+    justify-self: center;
+}
+
+#vzdelanie #school {
+    margin-bottom: 70px;
+}
+
+#uspechy .block {
+    grid-template-columns: minmax(min-content, 470px) minmax(min-content, 360px);
+}
+
+#uspechy .cvicenia {
+    grid-row: 1 / 3;
+    grid-column: 1;
+}
+
+#uspechy .projekty {
+    grid-column: 2;
+    align-self: end;
+}
+
+#uspechy img {
+    grid-row: 1;
+    grid-column: 2;
+    margin-top: 10px;
+    justify-self: center;
+}
+
+#uspechy dl {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 5px;
+}
+
+#uspechy dt {
+    font-style: italic;
+}
+
+#uspechy dd {
+    background-image: url('../img/check.png');
+    background-position: left;
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    margin: 5px 0 20px 10px;
+    padding-left: 14px;
+}
+
+#zaluby #title {
+    font-size: 60px;
+    margin-top: 20px;
+    margin-bottom: 52px;
+}
+
+#zaluby .block {
+    grid-template-columns: minmax(min-content, 450px) 1fr;
+    margin-bottom: 40px;
+}
+
+img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color:#25363a;
+}
+
+nav {
+    width: 100%;
+    background-color: #F2E635;
+    position: fixed;
+    top: 0;
+}
+
+nav .content {
+    padding-bottom: 0;
+}
+
+nav #menu-button {
+    padding: 9px 14px;
+    display: none;
+}
+
+nav #hideable-menu {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    float: left;
+    margin: 0;
+}
+
+nav a {
+    display: inline-block;
+    font-size: 16px;
+    padding: 9px 16px;
+    margin: 0;
+}
+
+nav li:hover,
+nav #menu-button:hover {
+    background-color: #eee132;
+}
+
+main {
+    font-weight: 300;
+}
+
+section {
+    display: grid;
+    align-items: center;
+    padding-top: 40px;
+    min-height: 100vh;
+}
+
+section .content p {
+    margin-bottom: 20px;
+}
+
+h2, h3, h4 {
+    margin-top: 0px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 60px;
+    margin-bottom: 25px;
+}
+
+h3 {
+    margin-bottom: 15px;
+    font-size: 40px;
+}
+
+h4 {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+footer {
+    background-color: #25363a;
+    padding-top: 15px;
+    font-size: 15px;
+}
+
+footer .content {
+    padding-bottom: 15px;
+} 
+
+footer dl {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 3px;
+    grid-template-columns: minmax(min-content, 50px) 1fr;
+    margin: 0;
+}
+
+footer dd {
+    margin-left: 0;
+}
+
+footer dt,
+footer a {
+    color: #F2F2F2;
+}
+
+@media only screen and (max-width: 541px) {
+
+    nav #hideable-menu {
+        display: none;
+        grid-column: 1;
+    }
+
+    nav #hideable-menu.show {
+        display: block;
+    }
+
+    section.move {
+        padding-top: 160px;
+    }
+
+    nav .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    nav #menu-button {
+        display: block;
+        transform: rotate(90deg);
+        grid-row: 1;
+        grid-column: 2;
+        align-self: start;
+        justify-self: right; 
+    }
+
+    nav li {
+        float: none;
+    }
+
+    .block {
+        grid-template-columns: 1fr;
+    }
+
+    #uvod img {
+        grid-row: 1;
+        grid-column: 1;
+        justify-self: left;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+
+    #vzdelanie #school img {
+        grid-row: 1;
+        grid-column: 1;
+        justify-self: left;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    #vzdelanie #school p {
+        grid-column: 1;
+    }
+
+    #uspechy .block {
+        grid-template-columns: 1fr;
+    }
+
+    #uspechy img {
+        grid-row: 1;
+        grid-column: 1;
+        justify-self: left;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #uspechy .cvicenia {
+        grid-row: 2;
+    }
+
+    #uspechy .projekty {
+        grid-column: 1;
+    }
+
+    #zaluby .block {
+        grid-template-columns: 1fr;
+    }
+
+
+    #zaluby .image {
+        grid-row: 1;
+        grid-column: 1;
+    }
+}

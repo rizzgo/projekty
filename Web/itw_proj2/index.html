@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - Richard Seipel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="content">
+            <ul id="menu">
+                <li><a onclick="closeMenu()" href="https://www.stud.fit.vutbr.cz/~xseipe00/projekt/">Úvod</a></li>
+            </ul>
+            <ul id="hideable-menu">
+                <li><a onclick="getMenu()" href="#vzdelanie">Vzdelanie</a></li>
+                <li><a onclick="getMenu()" href="#uspechy">Úspechy</a></li>
+                <li><a onclick="getMenu()" href="#zaluby">Záľuby</a></li>
+            </ul>
+            <a href="javascript:void(0);" id=menu-button onclick="getMenu()">|||</a>
+        </div>
+        <script>
+            function getMenu() {
+                var menu = document.getElementById("hideable-menu");
+                var section = document.getElementById("uvod");
+                if (menu.classList.contains("show")) {
+                    menu.classList.remove("show");
+                    section.classList.remove("move");
+                    
+                } else {
+                    menu.classList.add("show");
+                    section.classList.add("move");
+                    
+                }
+            }
+
+            function closeMenu() {
+                var menu = document.getElementById("hideable-menu");
+                var section = document.getElementById("uvod");
+                if (menu.classList.contains("show")) {
+                    menu.classList.remove("show");
+                    section.classList.remove("move");
+                    
+                }
+            }
+        </script>
+    </nav>
+    
+    <main>
+        <section id=uvod>
+            <div class=content>
+                <div class="block">
+                    <h2>Richard Seipel</h2>
+                    <h4>Študent tvorby webov a webového dizajnu</h4>
+                    <img src="img/profile.jpg" alt="Moja fotka" width="160px" height="160px">
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit inventore, porro libero fugit magnam sunt animi optio ab, molestias quaerat odio ut eius. Ducimus pariatur vitae consequatur voluptatibus, minus sequi.
+                </p>
+            </div>
+        </section>
+        
+        <section id=vzdelanie>
+            <div class=content>
+                <div id="school" class="block">
+                    <h3>FIT VUT v Brne</h3>
+                    <img src="img/vutlogo.jpg" alt="Logo VUT" width="120px" height="120px">
+                    <h4>2019 -></h4>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem asperiores id accusamus perspiciatis natus pariatur rerum dolorum vitae inventore animi porro, labore voluptatibus consequuntur earum, quaerat numquam ex. Dignissimos, saepe!
+                    </p>
+                </div>
+                <h3 id="course">Začiatok predmetu Tvorba webových stránek</h3>
+                <h4>2021 -></h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </section>
+
+        <section id=uspechy>
+            <div class=content>
+                <div class="block">
+                    <img src="img/success.jpg" alt="Trofej" width="160px" height="160px">
+                    
+                    <div class="cvicenia">
+                        <h3>Úspechy na cvičeniach</h3>
+                        <dl>
+                            <dt>17.2.2021</dt>
+                            <dd>úspešne zvládnuté na 2 body</dd>
+                            <dt>24.2.2021</dt>
+                            <dd>úspešne zvládnuté na 2 body</dd>
+                            <dt>3.3.2021</dt>
+                            <dd>úspešne zvládnuté na 2 body</dd>
+                            <dt>10.3.2021</dt>
+                            <dd>úspešne zvládnuté na 2 body</dd>
+                            <dt>14.4.2021</dt>
+                            <dd>úspešne zvládnuté na 2 body</dd>
+                            <dt>21.4.2021</dt>
+                            <dd>bude sa konať</dd>
+                        </dl>
+                    </div>
+
+                    <div class="projekty">
+                        <h3>Úspešné projekty</h3>
+                        <h4>Projekt 1</h4>
+                        <dl>
+                            <dt>8.4.2021</dt>
+                            <dd>projekt zvládnutý na 19 z 20 bodov</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id=zaluby>
+            <div class=content>
+                <h3 id="title">Záľuby</h3>
+
+                <div class="block">
+                    <div class="text">
+                        <h3>Horská cyklistika</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="image">
+                        <img src="img/bike.jpg" alt="Bicykel na traile" width="120px" height="120px">
+                    </div>
+                </div>
+                
+
+                <div class="block">
+                    <div class="text">
+                        <h3>Bouldering</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="image">
+                        <img src="img/hangar.jpg" alt="Lezecká stena" width="120px" height="120px">
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="text">
+                        <h3>Fotografia</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil qui hic.</p>
+                    </div>
+                    <div class="image">
+                        <img src="img/foto.jpg" alt="Mnou vytvorená fotografia" width="120px" height="120px">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="content">
+            <dl>
+                <dt>Email:</dt>
+                <dd><a href="mailto:xseipe00@stud.fit.vutbr.cz">xseipe00@stud.fit.vutbr.cz</a></dd>
+                <dt>Telefón:</dt>
+                <dd><a href="tel:+421564824763">+421564824763</a></dd>
+            </dl>
+        </div>
+    </footer>
+</body>
+</html>
