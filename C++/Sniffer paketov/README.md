@@ -1,5 +1,5 @@
 
-README k programu ipk-sniffer
+# Sniffer paketov
 
 
 Program zachytáva pakety na určenom rozhraní, zisťuje a vypisuje čas ich odoslania, 
@@ -8,24 +8,24 @@ filtrovať alebo obmedziť ich počet.
 
 
 Odovzdané súbory:
-
+```
 ipk-sniffer.h
 ipk-sniffer.cpp
 Makefile
 manual.pdf
 README.txt
-
+```
 
 Formát spustenia:
-
+```
 ./ipk-sniffer [-i rozhranie | --interface rozhranie] {-p ­­port} {[--tcp|-t] [--udp|-u] [--arp] [--icmp] } {-n num}
-
-[] - povinné, {} - voliteľné
+```
+`[]` - povinné, `{}` - voliteľné
 
 
 
 Príklady spustenia:
-
+```
 sudo ./ipk-sniffer -i wlp0s20f3 -p 8009 -t
 2021-04-25T18:42:42.874291+02:00 192.168.0.181 : 38202 > 192.168.0.174 : 8009, length 176 bytes
 
@@ -68,3 +68,4 @@ sudo ./ipk-sniffer -i wlp0s20f3 -n 2 --arp
 0x0000: cc 98 8b 5f 32 5a d4 3b 04 57 92 25 08 06 00 01 ..._2Z.;.W.%....
 0x0010: 08 00 06 04 00 02 d4 3b 04 57 92 25 c0 a8 00 b5 .......;.W.%....
 0x0020: cc 98 8b 5f 32 5a c0 a8 00 ae ..._2Z....
+```
