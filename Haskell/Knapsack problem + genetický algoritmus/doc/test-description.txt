@@ -1,0 +1,4 @@
+Testy je možné spustiť skriptom v jazyku python príkazom:
+python3 runtests.py <mód programu>
+pre módy (-i,-b,-o).
+Prípadne ľubovoľný test samostatne, ako vstup programu flp22-fun.
