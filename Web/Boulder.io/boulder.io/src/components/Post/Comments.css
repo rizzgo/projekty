@@ -1,0 +1,102 @@
+/**
+ * @author xbahni00
+ */
+
+ .commentsStyle {
+    grid-column: 1/-1;
+    position: relative;
+    text-align: center;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 5px;
+    padding-top: 0px;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.commentGroupStyle {
+    padding: 10px 0 0px 0;
+    border-top: 1px solid rgb(190, 190, 190);
+}
+
+.commentsText {
+    position: relative;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.commentsCommentsButton {
+    margin-top: 30px;
+    position: absolute;
+    width: 220px;
+    height: 40px;
+    left: calc(50% - 110px);
+    border-radius: 5px;
+    border: none;
+    background-color: #3271d6;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);  
+    font-size: 20px;
+    color: #dbdbdb;
+}
+
+.commentsCommentsButton:hover {
+    background-color: #5786d1;
+    color: #dbdbdb;
+}
+
+.leftFloat {
+    float: left;
+    position: relative;
+    left: 15%;
+}
+
+.rightFloat {
+    float: right;
+    position: relative;
+    right: 15%;
+}
+
+.commentsExit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1em;
+}
+
+.addCommButton {
+    cursor: pointer;
+    float: right;
+    position: relative;
+    top: 8px;
+    width: 20%;
+    height: 28px;
+    margin-right: 2px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(38, 132, 255);
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.addCommButton:hover {
+    background-color: #5786d1;
+    color: #dbdbdb;
+}
+
+.addCommentInput {
+    border-radius: 5px;
+    position: relative;
+    width: 75%;
+    height: 20px;
+    float: left;
+    top: 10px;
+    border-width: 1px;
+    padding: 2px;
+    padding-left: 5px ;
+    margin-bottom: 12px;
+    border:1px solid rgb(190, 190, 190);
+    background-color: rgb(243, 243, 243);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);  
+    outline: transparent;
+}

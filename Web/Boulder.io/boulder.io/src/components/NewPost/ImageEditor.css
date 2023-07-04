@@ -1,0 +1,73 @@
+/**
+ * @author xmikus18
+ */
+
+.canvas {
+    width: 100vw;
+}
+.file-input{
+    display: none;
+}
+
+.file-input-label{
+    background-color: white;
+    padding: 30px 50px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 15px;
+    
+}
+
+.save-image{
+    background-color: rgb(38, 132, 255);
+    color: white;
+    width: 95vw;
+    max-width: 800px;
+    padding-bottom: 5px;
+    height: 35px;
+    border: rgb(38, 132, 255) solid 1px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin: 10px;
+    font-family: inherit;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);
+}
+.pallete{
+    border-radius: 5px 5px 0px 0px;
+    display: grid;
+    height: 30px;
+    background-color: white;
+    padding: 8px 10px;
+    column-gap: 10px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.save-image-container {
+    background-color: white;
+    border-radius: 0px 0px 5px 5px;
+    padding-bottom: 3px;
+}
+
+.canvas-container{
+    
+    background-color: white;
+}
+
+.set-green{
+    background-color: #77fc03;
+    border-radius: 5px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);
+}
+
+.set-blue{
+    background-color: #03d3fc;
+    border-radius: 5px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);
+}
+
+.set-orange{
+   background-color: #ffa500; 
+   border-radius: 5px;
+   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);
+}

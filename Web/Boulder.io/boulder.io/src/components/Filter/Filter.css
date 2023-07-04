@@ -1,0 +1,85 @@
+/**
+*   @author xbahni00
+*/
+
+.login_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 1000
+}
+
+.filterOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 1000
+}
+
+.filterStyle {
+    position: fixed;
+    bottom: 63px;
+    left: 50%;
+    box-sizing: border-box;
+    transform: translate(-50%, 0);
+    text-align: center;
+    /*   center minus half of div width   */
+    height: 320px;
+    width: 98vw;
+    max-width: 790px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.filterText {
+    position: relative;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.filterFilterButton {
+    cursor: pointer;
+    margin-top: 30px;
+    position: absolute;
+    width: 220px;
+    height: 40px;
+    left: calc(50% - 110px);
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(38, 132, 255);
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.filterFilterButton:hover {
+    background-color: #5786d1;
+    color: #dbdbdb;
+}
+
+.leftFloat {
+    float: left;
+    position: relative;
+    left: 15%;
+}
+
+.rightFloat {
+    float: right;
+    position: relative;
+    right: 15%;
+}
+
+.filterExit {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5em;
+}

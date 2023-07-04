@@ -1,0 +1,23 @@
+/**
+ * @author xbahni00
+ */
+
+.commentContainer {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 10px;
+    text-align: left;
+    position: relative;
+    font-size: 13px;
+    left: 2px;
+    margin: 0px 3px ;
+    padding-bottom: 5px;
+}
+
+.commentContainer > .content {
+    margin: 0;
+}
+
+.commentContainer > .username {
+    font-weight: bold;
+}

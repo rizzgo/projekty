@@ -1,0 +1,98 @@
+/**
+ * @author xmikus18
+ */
+
+svg {
+    color: black;
+}
+
+.layout {
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header" "main" "footer";
+}
+
+.layout>.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-color: rgb(38, 132, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -12px 30px, rgba(0, 0, 0, 0.1) 0px 4px 6px, rgba(0, 0, 0, 0.15) 0px 12px 13px, rgba(0, 0, 0, 0.2) 0px -3px 5px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: 50px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.header>div {
+    display: grid;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.header>.logo {
+    display: grid;
+    align-items: center;
+    justify-self: start;
+    font-size: xx-large;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.header>.logo>a {
+    color: white;
+    text-decoration: none;
+}
+
+.header>.newPost>a {
+    display: grid;
+    align-items: center;
+    justify-self: end;
+    font-size: xx-large;
+}
+
+.header>.newPost>.a>svg {
+    color: white;
+}
+
+.layout>.items {
+    grid-area: main;
+}
+
+.layout>.taskBar {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: stretch;
+    position: sticky;
+    bottom: 7px;
+    height: 45px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 54px 55px, rgba(0, 0, 0, 0.1) 0px -12px 30px, rgba(0, 0, 0, 0.2) 0px 4px 6px, rgba(0, 0, 0, 0.2) 0px 12px 13px, rgba(0, 0, 0, 0.2) 0px -3px 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.taskBarItem {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+    font-size: x-large;
+}
+
+.taskBarItem.filter {
+    border-radius: 5px;
+    background-color: rgb(38, 132, 255);
+    border: 5px solid rgb(38, 132, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 54px 55px, rgba(0, 0, 0, 0.1) 0px -12px 20px, rgba(0, 0, 0, 0.2) 0px 4px 6px, rgba(0, 0, 0, 0.2) 0px 12px 13px, rgba(0, 0, 0, 0.2) 0px -3px 5px;
+}
+
+.taskBarItem.filter>svg {
+    color: white;
+    border-radius: 5px;
+}

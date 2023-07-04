@@ -1,0 +1,187 @@
+/**
+ * @author xmikus18
+ */
+ 
+.upperBar {
+    margin-top: 0;
+    margin-bottom: 0px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border: 1px rgb(190, 190, 190) solid;
+    border-radius: 5px 5px 0px 0px;
+    display: grid;
+}
+
+.postWindow {
+    margin: 30px 9px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.name {
+    grid-column: 1;
+    margin-left: 15px;
+    text-align: left;
+    font-size: large;
+    font-weight: 500;
+    font-family: inherit;
+    border: none;
+    background-color: rgba(204, 204, 204, 0.027);
+    cursor: pointer;
+}
+
+.difficulity {
+    grid-column: 2;
+    font-size: large;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.boulderPhoto {
+    position: relative;
+    display: grid;
+    z-index: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-left: rgb(190, 190, 190) 2px solid;
+    border-right: rgb(190, 190, 190) 2px solid;
+}
+
+.boulderPhoto>div {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.boulderPhoto>div> {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.photo {
+    justify-self: center;
+    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.previous {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+}
+
+.previous:hover {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0%), rgba(255, 255, 255, 30%));
+}
+
+.previous > svg {
+    font-size: 30px;
+}
+
+.next > svg {
+    font-size: 30px;
+}
+
+.next {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100%;
+}
+
+.next:hover {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0%), rgba(255, 255, 255, 30%));
+}
+
+.lowerBar {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 5px;
+    justify-self: center;
+    margin-top: 0px;
+    padding-top: 9px;
+    border: rgb(190, 190, 190) 1px solid;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.votes {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 15px;
+    padding-left: 15px;
+    justify-content: stretch;
+    grid-column: 1;
+}
+
+.up {
+    text-align: center;
+    align-self: center;
+}
+
+.down {
+    text-align: center;
+    align-self: center;
+}
+
+.rating {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
+    justify-content: center;
+    font-size: 16/5px;
+    grid-column: 2;
+}
+
+.commentSection {
+    display: grid;
+    grid-template-columns: 6fr auto;
+    grid-gap: 0px 5px;
+    grid-row: 2;
+    grid-column: 1/-1;
+    margin-left: 18px;
+    margin-right: 18px;
+    border-top: rgb(190, 190, 190) 1px solid;
+}
+
+.descriptionOfpicture {
+    font-size: 14px;
+    max-width: 680px;
+    padding: 5px;
+    padding-bottom: 10px;
+    overflow-wrap: break-word;
+    font-family: inherit;
+}
+
+.bubble {
+    display: grid;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    background-color: rgb(38, 132, 255);
+    border-radius: 5px;
+    align-self: center;
+    justify-self: center;
+    font-size: 23px;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.bubbleLine {
+    display: block;
+    color: white;
+    padding: 7px 10px;
+}
+
+.star {
+    padding-top: 2px;
+    text-align: baseline;
+    color: rgb(255, 169, 71);
+}
