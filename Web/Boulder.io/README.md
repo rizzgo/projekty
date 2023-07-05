@@ -24,4 +24,4 @@ Prezeranie a filtrovanie ciest pre inšpiráciu pri lezení, či už na domovske
 
 | ![Filter](screenshots/9_filter.png) | ![](screenshots/empty.png) |
 |:--:|:--:|
-| **9. Filtrovanie príspevkov** | |
+| **9. Filtrovanie príspevkov** |                     |
